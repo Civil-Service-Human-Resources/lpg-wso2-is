@@ -1,21 +1,17 @@
 version: "3"
 services:
-  mysql:
-    image: dgraph/dgraph:latest
-    volumes:
-      - /tmp/data:/dgraph
+  postgres:
+    image: postgres:10
     ports:
-      - 5080:5080
-      - 6080:6080
+      - 5432:5432
     restart: on-failure
-    command: dgraph zero --port_offset -2000 --my=zero:5080
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - /tmp/wso2-pg-data:/var/lib/postgresql/data
 
-  wso2:
-    image: dgraph/dgraph:latest
-    volumes:
-      - /tmp/data:/dgraph
-    ports:
-      - 8080:8080
-      - 9080:9080
-    restart: on-failure
-    command: dgraph server --my=server:7080 --memory_mb=2048 --zero=zero:5080
+#  wso2:
+#    build: .
+#    ports:
+#      - 9443:9443

@@ -1,4 +1,11 @@
 
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://maven.wso2.org/nexus/content/groups/wso2-public/'
+    }
+}
+
 apply plugin: 'java'
 
 sourceCompatibility = '1.8'
@@ -16,7 +23,7 @@ jar {
 }
 
 dependencies {
-    compile 'org.wso2.carbon.identity.framework:org.wso2.carbon.identity.core:5.10.98'
+    compile 'org.wso2.carbon:org.wso2.carbon.user.core:4.4.20'
 
     testCompile 'org.hamcrest:hamcrest-core'
     testCompile 'org.testng:testng:6.13.1'
