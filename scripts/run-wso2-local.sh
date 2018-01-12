@@ -5,6 +5,8 @@
 # This script assumes, and is only useful when, you are running postgres via docker-compose and want to do local
 # dev on wso2
 
+docker kill wso2
+
 pushd $(dirname $0)/..
 
 ./gradlew build

@@ -19,5 +19,7 @@ RUN wget -P ./repository/components/lib https://jdbc.postgresql.org/download/pos
 
 COPY src/main/conf/datasources/master-datasources.xml ./repository/conf/datasources
 COPY src/main/conf/user-mgt.xml ./repository/conf
+COPY src/main/conf/claim-config.xml ./repository/conf
+COPY src/main/conf/carbon.xml ./repository/conf
 
 COPY ./build/libs/wso2-is-extensions.jar ./repository/components/dropins

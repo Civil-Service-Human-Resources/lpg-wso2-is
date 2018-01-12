@@ -31,7 +31,11 @@ public class UserStoreManager extends JDBCUserStoreManager {
     @Override
     public void doSetUserClaimValue(String userName, String claimURI, String claimValue, String profileName) throws UserStoreException {
         LOG.debug("doSetUserClaimValue for " + userName);
-        super.doSetUserClaimValue(userName, claimURI, claimValue, profileName);
+        if (claimURI.startsWith("http://cslearning.gov.uk/claims")) {
+            LOG.debug("BOOM");
+        } else {
+            super.doSetUserClaimValue(userName, claimURI, claimValue, profileName);
+        }
     }
 
     @Override
