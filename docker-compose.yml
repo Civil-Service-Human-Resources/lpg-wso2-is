@@ -1,4 +1,4 @@
-version: "3"
+version: "3.5"
 services:
   postgres:
     image: postgres:10
@@ -10,8 +10,14 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - /tmp/wso2-pg-data:/var/lib/postgresql/data
+    networks:
+      - wso2is
 
 #  wso2:
 #    build: .
 #    ports:
 #      - 9443:9443
+
+networks:
+  wso2is:
+    name: wso2is_default
