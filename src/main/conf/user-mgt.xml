@@ -5,7 +5,7 @@
             <AddAdmin>true</AddAdmin>
             <AdminRole>admin</AdminRole>
             <AdminUser>
-                <UserName>admin</UserName>
+                <UserName>admin@cslearning.gov.uk</UserName>
                 <Password>admin</Password>
             </AdminUser>
             <EveryOneRoleName>everyone</EveryOneRoleName> <!-- By default users in this role sees the registry root -->
@@ -37,7 +37,7 @@
             <Property name="RolenameJavaRegEx">^[\S]{3,30}$</Property>
             <Property name="RolenameJavaScriptRegEx">^[\S]{3,30}$</Property>
             <Property name="CaseInsensitiveUsername">false</Property>
-            <Property name="SCIMEnabled">true</Property>
+            <Property name="SCIMEnabled">false</Property>
             <Property name="IsBulkImportSupported">false</Property>
             <Property name="PasswordDigest">SHA-256</Property>
             <Property name="StoreSaltedPassword">true</Property>

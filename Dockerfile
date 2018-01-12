@@ -18,6 +18,8 @@ RUN wget -P /opt https://github.com/wso2/product-is/releases/download/v${IS_VERS
 RUN wget -P ./repository/components/lib https://jdbc.postgresql.org/download/postgresql-42.1.4.jar
 
 COPY src/main/conf/datasources/master-datasources.xml ./repository/conf/datasources
+COPY src/main/conf/identity/sso-idp-config.xml ./repository/conf/identity
+COPY src/main/conf/identity/service-providers/lpg-ui.xml ./repository/conf/identity/service-providers
 COPY src/main/conf/user-mgt.xml ./repository/conf
 COPY src/main/conf/claim-config.xml ./repository/conf
 COPY src/main/conf/carbon.xml ./repository/conf
