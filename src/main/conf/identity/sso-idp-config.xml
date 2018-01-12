@@ -70,9 +70,9 @@
         <ServiceProvider>
             <Issuer>lpg-ui</Issuer>
             <AssertionConsumerServiceURLs>
-                <AssertionConsumerServiceURL>http://localhost:3001/sign-in</AssertionConsumerServiceURL>
+                <AssertionConsumerServiceURL>http://localhost:3001/authenticate</AssertionConsumerServiceURL>
             </AssertionConsumerServiceURLs>
-            <DefaultAssertionConsumerServiceURL>http://localhost:3001/sign-in</DefaultAssertionConsumerServiceURL>
+            <DefaultAssertionConsumerServiceURL>http://localhost:3001/authenticate</DefaultAssertionConsumerServiceURL>
             <SignAssertion>false</SignAssertion>
             <SignResponse>false</SignResponse>
             <EnableAttributeProfile>true</EnableAttributeProfile>
