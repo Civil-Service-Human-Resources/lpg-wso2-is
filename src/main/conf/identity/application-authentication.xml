@@ -29,8 +29,8 @@
         AuthenticationEndpointURL is location of the web app containing
         the authentication related pages
     -->
-    <AuthenticationEndpointURL>http://localhost:3001/sign-in</AuthenticationEndpointURL>
-    <AuthenticationEndpointRetryURL>http://localhost:3001/sign-in</AuthenticationEndpointRetryURL>
+    <AuthenticationEndpointURL>${LPG_UI_URL}/sign-in</AuthenticationEndpointURL>
+    <AuthenticationEndpointRetryURL>${LPG_UI_URL}/sign-in</AuthenticationEndpointRetryURL>
 
     <!--
         Extensions allow extending the default behaviour of the authentication

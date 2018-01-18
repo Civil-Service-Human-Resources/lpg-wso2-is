@@ -13,9 +13,9 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:postgresql://postgres:5432/wso2is</url>
-                    <username>user</username>
-                    <password>password</password>
+                    <url>${DATABASE_URL}</url>
+                    <username>${DATABASE_USER}</username>
+                    <password>${DATABASE_PASSWORD}</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
                     <maxActive>80</maxActive>
                     <maxWait>60000</maxWait>

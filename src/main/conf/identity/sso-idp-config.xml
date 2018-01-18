@@ -70,9 +70,9 @@
         <ServiceProvider>
             <Issuer>lpg-ui</Issuer>
             <AssertionConsumerServiceURLs>
-                <AssertionConsumerServiceURL>http://localhost:3001/authenticate</AssertionConsumerServiceURL>
+                <AssertionConsumerServiceURL>${LPG_UI_URL}/authenticate</AssertionConsumerServiceURL>
             </AssertionConsumerServiceURLs>
-            <DefaultAssertionConsumerServiceURL>http://localhost:3001/authenticate</DefaultAssertionConsumerServiceURL>
+            <DefaultAssertionConsumerServiceURL>${LPG_UI_URL}/authenticate</DefaultAssertionConsumerServiceURL>
             <SignAssertion>false</SignAssertion>
             <SignResponse>false</SignResponse>
             <EnableAttributeProfile>true</EnableAttributeProfile>

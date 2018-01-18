@@ -4,6 +4,16 @@ ENTRYPOINT ["bin/wso2server.sh"]
 
 EXPOSE 9443 9763 8000 10500
 
+ENV DATABASE_URL=jdbc:postgresql://postgres:5432/wso2is
+ENV DATABASE_USER=user
+ENV DATABASE_PASSWORD=password
+
+ENV CARBON_PROTOCOL=https
+ENV CARBON_HOST=identity.dev.cshr.digital
+ENV CARBON_PORT=9443
+
+ENV LPG_UI_URL=http://lpg.dev.cshr.digital:3001
+
 ARG IS_VERSION=${VERSION:-5.4.0-update3}
 
 WORKDIR /opt/wso2is-${IS_VERSION}
@@ -24,5 +34,6 @@ COPY src/main/conf/identity/service-providers/lpg-ui.xml ./repository/conf/ident
 COPY src/main/conf/user-mgt.xml ./repository/conf
 COPY src/main/conf/claim-config.xml ./repository/conf
 COPY src/main/conf/carbon.xml ./repository/conf
+COPY src/main/bin/wso2server.sh ./bin
 
 COPY ./build/libs/wso2-is-extensions.jar ./repository/components/dropins
