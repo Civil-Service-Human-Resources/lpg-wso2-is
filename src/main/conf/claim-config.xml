@@ -33,6 +33,13 @@
 				<SupportedByDefault />
 			</Claim>
 			<Claim>
+				<ClaimURI>http://wso2.org/claims/department</ClaimURI>
+				<DisplayName>Department</DisplayName>
+				<AttributeID>department</AttributeID>
+				<Description>Department</Description>
+				<SupportedByDefault />
+			</Claim>
+			<Claim>
 				<ClaimURI>http://wso2.org/claims/givenname</ClaimURI>
 				<DisplayName>First Name</DisplayName>
 				<AttributeID>givenName</AttributeID>
@@ -135,13 +142,6 @@
 				<Description>Role</Description>
 	            		<SupportedByDefault />
 				<ReadOnly />
-			</Claim>
-			<Claim>
-				<ClaimURI>http://wso2.org/claims/department</ClaimURI>
-				<DisplayName>Department</DisplayName>
-				<AttributeID>departmentNumber</AttributeID>
-				<Description>Department</Description>
-				<SupportedByDefault />
 			</Claim>
 			<Claim>
 				<ClaimURI>http://wso2.org/claims/postalcode</ClaimURI>
@@ -854,6 +854,30 @@
 			</Claim>
 		</Dialect>
         <Dialect dialectURI="urn:scim:schemas:core:1.0">
+			<Claim>
+				<ClaimURI>urn:scim:schemas:core:1.0:profession</ClaimURI>
+				<DisplayName>Profession</DisplayName>
+				<AttributeID>profession</AttributeID>
+				<Description>Profession</Description>
+				<Required />
+				<MappedLocalClaim>http://wso2.org/claims/profession</MappedLocalClaim>
+			</Claim>
+			<Claim>
+				<ClaimURI>urn:scim:schemas:core:1.0:grade</ClaimURI>
+				<DisplayName>Grade</DisplayName>
+				<AttributeID>grade</AttributeID>
+				<Description>Grade</Description>
+				<Required />
+				<MappedLocalClaim>http://wso2.org/claims/grade</MappedLocalClaim>
+			</Claim>
+			<Claim>
+				<ClaimURI>urn:scim:schemas:core:1.0:department</ClaimURI>
+				<DisplayName>Department</DisplayName>
+				<AttributeID>department</AttributeID>
+				<Description>Department</Description>
+				<Required />
+				<MappedLocalClaim>http://wso2.org/claims/department</MappedLocalClaim>
+			</Claim>
 			<Claim>
 				<ClaimURI>urn:scim:schemas:core:1.0:id</ClaimURI>
 				<DisplayName>Id</DisplayName>
@@ -1604,6 +1628,33 @@
 		</Dialect>
 		<Dialect dialectURI="urn:ietf:params:scim:schemas:core:2.0:User">
 			<Claim>
+				<ClaimURI>urn:ietf:params:scim:schemas:core:2.0:User:grade</ClaimURI>
+				<DisplayName>Grade</DisplayName>
+				<AttributeID>grade</AttributeID>
+				<Description>Grade</Description>
+				<Required />
+				<SupportedByDefault />
+				<MappedLocalClaim>http://wso2.org/claims/grade</MappedLocalClaim>
+			</Claim>
+			<Claim>
+				<ClaimURI>urn:ietf:params:scim:schemas:core:2.0:User:profession</ClaimURI>
+				<DisplayName>Profession</DisplayName>
+				<AttributeID>profession</AttributeID>
+				<Description>Profession</Description>
+				<Required />
+				<SupportedByDefault />
+				<MappedLocalClaim>http://wso2.org/claims/profession</MappedLocalClaim>
+			</Claim>
+			<Claim>
+				<ClaimURI>urn:ietf:params:scim:schemas:core:2.0:User:department</ClaimURI>
+				<DisplayName>Department</DisplayName>
+				<AttributeID>department</AttributeID>
+				<Description>Department</Description>
+				<Required />
+				<SupportedByDefault />
+				<MappedLocalClaim>http://wso2.org/claims/department</MappedLocalClaim>
+			</Claim>
+			<Claim>
 				<ClaimURI>urn:ietf:params:scim:schemas:core:2.0:User:userName</ClaimURI>
 				<DisplayName>User Name</DisplayName>
 				<AttributeID>uid</AttributeID>
@@ -1924,106 +1975,33 @@
 				<MappedLocalClaim>http://wso2.org/claims/x509Certificates</MappedLocalClaim>
 			</Claim>
 		</Dialect>
-		<Dialect dialectURI="urn:ietf:params:scim:schemas:extension:enterprise:2.0:User">
+		<Dialect dialectURI="urn:ietf:params:scim:schemas:extension:cshr:1.0:User">
 			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber</ClaimURI>
-				<DisplayName>employeeNumber</DisplayName>
-				<AttributeID>externalId</AttributeID>
-				<Description>employeeNumber</Description>
+				<ClaimURI>urn:ietf:params:scim:schemas:extension:cshr:1.0:User:department</ClaimURI>
+				<DisplayName>Department</DisplayName>
+				<AttributeID>department</AttributeID>
+				<Description>Department</Description>
 				<Required />
-				<DisplayOrder>1</DisplayOrder>
-				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/externalid</MappedLocalClaim>
-			</Claim>
-			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter</ClaimURI>
-				<DisplayName>oneTimePassword</DisplayName>
-				<AttributeID>userType</AttributeID>
-				<Description>costCenter</Description>
-				<Required />
-				<DisplayOrder>1</DisplayOrder>
-				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/userType</MappedLocalClaim>
-			</Claim>
-			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization</ClaimURI>
-				<DisplayName>Organization -division</DisplayName>
-				<AttributeID>organizationName</AttributeID>
-				<Description>Organization -division</Description>
-				<Required />
-				<DisplayOrder>1</DisplayOrder>
-				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/organization</MappedLocalClaim>
-			</Claim>
-			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department</ClaimURI>
-				<DisplayName>Organization -department</DisplayName>
-				<AttributeID>departmentNumber</AttributeID>
-				<Description>Organization -department</Description>
-				<Required />
-				<DisplayOrder>1</DisplayOrder>
 				<SupportedByDefault />
 				<MappedLocalClaim>http://wso2.org/claims/department</MappedLocalClaim>
 			</Claim>
 			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division</ClaimURI>
-				<DisplayName>Manager - home</DisplayName>
-				<AttributeID>stateorprovince</AttributeID>
-				<Description>Manager - home</Description>
+				<ClaimURI>urn:ietf:params:scim:schemas:extension:cshr:1.0:User:profession</ClaimURI>
+				<DisplayName>Profession</DisplayName>
+				<AttributeID>profession</AttributeID>
+				<Description>Profession</Description>
 				<Required />
-				<DisplayOrder>1</DisplayOrder>
 				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/stateorprovince</MappedLocalClaim>
+				<MappedLocalClaim>http://wso2.org/claims/profession</MappedLocalClaim>
 			</Claim>
 			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value</ClaimURI>
-				<DisplayName>Manager - home</DisplayName>
-				<AttributeID>gender</AttributeID>
-				<Description>Manager - home</Description>
+				<ClaimURI>urn:ietf:params:scim:schemas:extension:cshr:1.0:User:grade</ClaimURI>
+				<DisplayName>Grade</DisplayName>
+				<AttributeID>grade</AttributeID>
+				<Description>Grade</Description>
 				<Required />
-				<DisplayOrder>1</DisplayOrder>
 				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/gender</MappedLocalClaim>
-			</Claim>
-			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.$ref</ClaimURI>
-				<DisplayName>Manager - home</DisplayName>
-				<AttributeID>ref</AttributeID>
-				<Description>Manager - home</Description>
-				<Required />
-				<DisplayOrder>1</DisplayOrder>
-				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/resourceType</MappedLocalClaim>
-			</Claim>
-			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.displayName</ClaimURI>
-				<DisplayName>Manager - home</DisplayName>
-				<AttributeID>displayName</AttributeID>
-				<Description>Manager - home</Description>
-				<Required />
-				<DisplayOrder>1</DisplayOrder>
-				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/displayName</MappedLocalClaim>
-			</Claim>
-			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:askPassword</ClaimURI>
-				<DisplayName>Ask Password</DisplayName>
-				<AttributeID>askPassword</AttributeID>
-				<Description>Temporary claim to invoke email ask Password feature</Description>
-				<Required />
-				<DisplayOrder>1</DisplayOrder>
-				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/identity/askPassword</MappedLocalClaim>
-			</Claim>
-			<Claim>
-				<ClaimURI>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:verifyEmail</ClaimURI>
-				<DisplayName>Verify Email</DisplayName>
-				<AttributeID>verifyEmail</AttributeID>
-				<Description>Temporary claim to invoke email verified feature</Description>
-				<Required />
-				<DisplayOrder>1</DisplayOrder>
-				<SupportedByDefault />
-				<MappedLocalClaim>http://wso2.org/claims/identity/verifyEmail</MappedLocalClaim>
+				<MappedLocalClaim>http://wso2.org/claims/grade</MappedLocalClaim>
 			</Claim>
 		</Dialect>
 	</Dialects>

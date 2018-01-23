@@ -34,6 +34,7 @@ COPY src/main/conf/identity/service-providers/lpg-ui.xml ./repository/conf/ident
 COPY src/main/conf/user-mgt.xml ./repository/conf
 COPY src/main/conf/claim-config.xml ./repository/conf
 COPY src/main/conf/carbon.xml ./repository/conf
+COPY src/main/conf/scim2-schema-extension.config ./repository/conf
 COPY src/main/bin/wso2server.sh ./bin
 
 COPY ./build/libs/wso2-is-extensions.jar ./repository/components/dropins
