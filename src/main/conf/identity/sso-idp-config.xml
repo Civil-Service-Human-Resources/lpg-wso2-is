@@ -76,8 +76,8 @@
             <SignAssertion>false</SignAssertion>
             <SignResponse>false</SignResponse>
             <EnableAttributeProfile>true</EnableAttributeProfile>
+            <EnableSingleLogout>true</EnableSingleLogout>
             <IncludeAttributeByDefault>true</IncludeAttributeByDefault>
-            <!--<EnableSingleLogout>true</EnableSingleLogout>-->
             <Claims>
                 <Claim>http://wso2.org/claims/userid</Claim>
                 <Claim>http://wso2.org/claims/email</Claim>
@@ -85,9 +85,11 @@
                 <Claim>http://wso2.org/claims/profession</Claim>
                 <Claim>http://wso2.org/claims/grade</Claim>
             </Claims>
-            <!--<LogoutUrl>http://localhost:3001/sign-out</LogoutUrl>-->
+            <LogoutUrl>${LPG_UI_URL}/sign-out</LogoutUrl>
             <EnableAudienceRestriction>false</EnableAudienceRestriction>
             <ConsumingServiceIndex>2104589</ConsumingServiceIndex>
+            <EnableIdPInitiatedSSO>true</EnableIdPInitiatedSSO>
+            <EnableIdPInitSLO>true</EnableIdPInitSLO>
         </ServiceProvider>
     </ServiceProviders>
 </SSOIdentityProviderConfig>
