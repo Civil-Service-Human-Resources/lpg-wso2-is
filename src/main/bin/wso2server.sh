@@ -321,6 +321,7 @@ do
     -DDATABASE_USER=${DATABASE_USER} \
     -DDATABASE_PASSWORD=${DATABASE_PASSWORD} \
     -DLPG_UI_URL=${LPG_UI_URL} \
+    -DLPG_COURSE_UI_URL=${LPG_COURSE_UI_URL} \
     org.wso2.carbon.bootstrap.Bootstrap $*
     status=$?
 done

@@ -1,0 +1,18 @@
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker pull cshr/lpg-wso2-is
+
+script:
+  - docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT .
+
+after_success:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push cshr/lpg-wso2-is
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      echo "TODO deploy to test";
+    fi
