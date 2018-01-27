@@ -5,7 +5,7 @@ services:
 
 install:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker pull cshr/lpg-wso2-is
+    docker pull cshr/lpg-wso2-is || true
 
 script:
   - docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT .
