@@ -4,13 +4,12 @@ REPO=${1}
 SERVICE=${2}
 
 #clone ansible repository and set application version
-git clone https://github.com/Civil-Service-Human-Resources/${REPO}.git
-cd ${REPO}
+git clone https://github.com/Civil-Service-Human-Resources/lpg-ansible-mvp.git
+cd lpg-ansible-mvp
 echo "$SERVICE: $TRAVIS_COMMIT" > group_vars/all/${SERVICE}
 
 #run ansible
 sudo pip install ansible || exit 2
-chmod +x envVar.py || exit 2
 echo ${mvp_test} | base64 -d | ./envVar.py > mvp_test || exit 2
 chmod 600 mvp_test || exit 2
 echo ${vaultpassword} | base64 -d | ./envVar.py > vault.yml || exit 2
