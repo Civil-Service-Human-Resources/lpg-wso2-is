@@ -22,4 +22,4 @@ variables can be overridden:
  - CARBON_PROTOCOL (Default: https)
  - CARBON_HOST (Default: identity.dev.cshr.digital)
  - CARBON_PORT (Default: 9443)
- - LPG_UI_URL (Default: http://lpg.dev.cshr.digital:3001)
+ - LPG_UI_URL (Default: http://lpg.dev.cshr.digital:3001) 
