@@ -18,5 +18,3 @@ cat ssh_test.conf > ~/.ssh/config || exit 2
 ansible-playbook site.yml -i environments/test -t ${SERVICE} || exit 2
 rm -f mvp_test
 rm -f vault.yml
-
-
