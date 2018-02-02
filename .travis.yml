@@ -9,16 +9,3 @@ install:
 
 script:
   - docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT . && docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && docker push cshr/lpg-wso2-is && ./deploy.sh lpg-wso2-is wso2is
-
-install:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-  - ./build.sh pull
-  - ./build.sh install
-
-script:
-  - ./build.sh build ${TRAVIS_COMMIT} && ./build.sh push ${TRAVIS_COMMIT} && ./deploy.sh lpg-ansible-mvp lpgservices
-
-branches:
-  only:
-    - master
-    - silvano-travis
