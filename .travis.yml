@@ -3,9 +3,11 @@ sudo: required
 services:
   - docker
 
-install:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker pull cshr/lpg-wso2-is || true
-
-script:
-  - docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT . && docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && docker push cshr/lpg-wso2-is && ./deploy.sh wso2is
+jobs:
+  include:
+    - stage: build and push
+      install:
+        - docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT . && docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && docker push cshr/lpg-wso2-is
+    - stage: Deploy
+      script:
+        - ./deploy.sh wso2is || exit 2
