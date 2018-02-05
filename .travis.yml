@@ -1,12 +1,22 @@
 ---
+sudo: required
+
+services:
+  - docker
+
 jobs:
   include:
-    - stage: "build and push"
-      script:
-        - "docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT . && docker login -u \"$DOCKER_USERNAME\" -p \"$DOCKER_PASSWORD\" && docker push cshr/lpg-wso2-is"
+#    - stage: "build and push"
+#      script:
+#        - "docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT . && docker login -u \"$DOCKER_USERNAME\" -p \"$DOCKER_PASSWORD\" && docker push cshr/lpg-wso2-is"
     - stage: Deploy
       script:
         - "./deploy.sh wso2is || exit 2"
-services:
-  - docker
-sudo: required
+
+addons:
+  ssh_known_hosts:
+  - prod-lpg.uksouth.cloudapp.azure.com
+  - test-lpg.uksouth.cloudapp.azure.com
+  - 10.0.10.4
+  - 10.0.11.4
+  - 10.0.12.4
