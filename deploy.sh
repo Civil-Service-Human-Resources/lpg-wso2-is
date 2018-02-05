@@ -5,7 +5,7 @@ SERVICE=${1}
 #clone ansible repository and set application version
 git clone https://github.com/Civil-Service-Human-Resources/lpg-ansible-mvp.git
 cd lpg-ansible-mvp
-#echo "$SERVICE: $TRAVIS_COMMIT" > group_vars/all/${SERVICE} || exit 2
+echo "$SERVICE: $TRAVIS_COMMIT" > group_vars/all/${SERVICE} || exit 2
 
 #run ansible
 sudo pip install ansible || exit 2
