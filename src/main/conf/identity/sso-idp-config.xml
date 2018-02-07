@@ -80,6 +80,7 @@
             <IncludeAttributeByDefault>true</IncludeAttributeByDefault>
             <Claims>
                 <Claim>http://wso2.org/claims/userid</Claim>
+                <Claim>http://wso2.org/claims/givenname</Claim>
                 <Claim>http://wso2.org/claims/email</Claim>
                 <Claim>http://wso2.org/claims/department</Claim>
                 <Claim>http://wso2.org/claims/profession</Claim>
