@@ -8,7 +8,7 @@ ENV DATABASE_URL=jdbc:postgresql://postgres:5432/wso2is
 ENV DATABASE_USER=user
 ENV DATABASE_PASSWORD=password
 
-ENV CARBON_PROTOCOL=https
+ENV CARBON_PROTOCOL=http
 ENV CARBON_HOST=identity.dev.cshr.digital
 ENV CARBON_PORT=9443
 
@@ -37,6 +37,7 @@ COPY src/main/conf/user-mgt.xml ./repository/conf
 COPY src/main/conf/claim-config.xml ./repository/conf
 COPY src/main/conf/carbon.xml ./repository/conf
 COPY src/main/conf/scim2-schema-extension.config ./repository/conf
+COPY src/main/conf/tomcat/catalina-server.xml ./repository/conf/tomcat
 COPY src/main/bin/wso2server.sh ./bin
 
 #COPY ./build/libs/wso2-is-extensions.jar ./repository/components/dropins
