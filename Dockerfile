@@ -8,7 +8,7 @@ ENV DATABASE_URL=jdbc:postgresql://postgres:5432/wso2is
 ENV DATABASE_USER=user
 ENV DATABASE_PASSWORD=password
 
-ENV CARBON_PROTOCOL=http
+ENV CARBON_PROTOCOL=https
 ENV CARBON_HOST=identity.dev.cshr.digital
 ENV CARBON_PORT=9443
 
@@ -28,16 +28,6 @@ RUN wget -P /opt https://github.com/wso2/product-is/releases/download/v${IS_VERS
 
 RUN wget -P ./repository/components/lib https://jdbc.postgresql.org/download/postgresql-42.1.4.jar
 
-COPY src/main/conf/datasources/master-datasources.xml ./repository/conf/datasources
-COPY src/main/conf/identity/application-authentication.xml ./repository/conf/identity
-COPY src/main/conf/identity/sso-idp-config.xml ./repository/conf/identity
-COPY src/main/conf/identity/service-providers/lpg-ui.xml ./repository/conf/identity/service-providers
-COPY src/main/conf/identity/service-providers/lpg-course-ui.xml ./repository/conf/identity/service-providers
-COPY src/main/conf/user-mgt.xml ./repository/conf
-COPY src/main/conf/claim-config.xml ./repository/conf
-COPY src/main/conf/carbon.xml ./repository/conf
-COPY src/main/conf/scim2-schema-extension.config ./repository/conf
-COPY src/main/conf/tomcat/catalina-server.xml ./repository/conf/tomcat
-COPY src/main/bin/wso2server.sh ./bin
+COPY src/main/overlay .
 
 #COPY ./build/libs/wso2-is-extensions.jar ./repository/components/dropins
