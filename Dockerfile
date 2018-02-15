@@ -9,10 +9,10 @@ ENV DATABASE_USER=user
 ENV DATABASE_PASSWORD=password
 
 ENV CARBON_PROTOCOL=https
-ENV CARBON_HOST=identity.dev.cshr.digital
+ENV CARBON_HOST=identity.local.cshr.digital
 ENV CARBON_PORT=9443
 
-ENV LPG_UI_URL=http://lpg.dev.cshr.digital:3001
+ENV LPG_UI_URL=http://lpg.local.cshr.digital:3001
 ENV LPG_COURSE_UI_URL=http://localhost:3002
 
 ARG IS_VERSION=${VERSION:-5.4.0-update3}
