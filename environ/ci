@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT .
-docker login -u \"$DOCKER_USERNAME\" -p \"$DOCKER_PASSWORD\"
+docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 docker push cshr/lpg-wso2-is
 
 echo ${TRAVIS_COMMIT}
