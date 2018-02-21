@@ -17,4 +17,4 @@ else
     cd ${repoName}
 fi
 
-./deploy.sh lpgservices "$1" "$2"
+./deploy.sh wso2is "$1" "$2"
