@@ -9,8 +9,7 @@ script: ./environ/ci
 
 addons:
   ssh_known_hosts:
-  - prod-lpg.uksouth.cloudapp.azure.com
-  - test-lpg.uksouth.cloudapp.azure.com
+  - dev-lpg.uksouth.cloudapp.azure.com
   - 10.0.10.4
   - 10.0.11.4
   - 10.0.12.4

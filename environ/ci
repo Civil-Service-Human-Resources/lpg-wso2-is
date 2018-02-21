@@ -10,7 +10,3 @@ sudo pip install ansible
 
 # cd test/headless
 # npm install
-
-
-
-
