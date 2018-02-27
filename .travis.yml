@@ -4,6 +4,11 @@ sudo: required
 services:
   - docker
 
+cache:
+  directories:
+    - environ/lpg-ansible-mvp
+    - pyhome
+
 install: true
 script: ./environ/ci
 
