@@ -6,7 +6,6 @@ services:
 
 cache:
   directories:
-    - environ/lpg-ansible-mvp
     - pyhome
 
 install: true
