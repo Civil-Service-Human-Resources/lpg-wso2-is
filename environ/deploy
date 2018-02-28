@@ -11,10 +11,12 @@ if [ -d $repoName ]; then
     git reset --hard HEAD
     git remote update
     git checkout origin/master
+    echo "----- `pwd`"
 else
     git clone https://github.com/Civil-Service-Human-Resources/lpg-ansible-mvp
     git config advice.detachedHead false
     cd ${repoName}
+    echo "----- `pwd` -----"
 fi
 
-./deploy.sh wso2is "$1" "$2"
+./deploy.sh wso2is "$1" "$2"  || exit 2
