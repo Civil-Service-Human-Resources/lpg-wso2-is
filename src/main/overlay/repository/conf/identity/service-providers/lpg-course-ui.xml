@@ -1,12 +1,12 @@
 <ServiceProvider>
     <ApplicationID>4</ApplicationID>
-    <ApplicationName>lpg-course-ui</ApplicationName>
+    <ApplicationName>lpg-management-ui</ApplicationName>
     <Description>LPG Course UI Service Provider</Description>
 
     <InboundAuthenticationConfig>
         <InboundAuthenticationRequestConfigs>
             <InboundAuthenticationRequestConfig>
-                <InboundAuthKey>lpg-course-ui</InboundAuthKey>
+                <InboundAuthKey>lpg-management-ui</InboundAuthKey>
                 <InboundAuthType>samlsso</InboundAuthType>
                 <Properties></Properties>
             </InboundAuthenticationRequestConfig>

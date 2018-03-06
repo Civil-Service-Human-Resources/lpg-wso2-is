@@ -93,11 +93,11 @@
             <EnableIdPInitSLO>true</EnableIdPInitSLO>
         </ServiceProvider>
         <ServiceProvider>
-            <Issuer>lpg-course-ui</Issuer>
+            <Issuer>lpg-management-ui</Issuer>
             <AssertionConsumerServiceURLs>
-                <AssertionConsumerServiceURL>${LPG_COURSE_UI_URL}/authenticate</AssertionConsumerServiceURL>
+                <AssertionConsumerServiceURL>${LPG_MANAGEMENT_UI_URL}/authenticate</AssertionConsumerServiceURL>
             </AssertionConsumerServiceURLs>
-            <DefaultAssertionConsumerServiceURL>${LPG_COURSE_UI_URL}/authenticate</DefaultAssertionConsumerServiceURL>
+            <DefaultAssertionConsumerServiceURL>${LPG_MANAGEMENT_UI_URL}/authenticate</DefaultAssertionConsumerServiceURL>
             <SignAssertion>false</SignAssertion>
             <SignResponse>false</SignResponse>
             <EnableAttributeProfile>true</EnableAttributeProfile>
@@ -107,7 +107,7 @@
                 <Claim>http://wso2.org/claims/userid</Claim>
                 <Claim>http://wso2.org/claims/email</Claim>
             </Claims>
-            <LogoutUrl>${LPG_COURSE_UI_URL}/sign-out</LogoutUrl>
+            <LogoutUrl>${LPG_MANAGEMENT_UI_URL}/sign-out</LogoutUrl>
             <EnableAudienceRestriction>false</EnableAudienceRestriction>
             <ConsumingServiceIndex>2104589</ConsumingServiceIndex>
             <EnableIdPInitiatedSSO>true</EnableIdPInitiatedSSO>
