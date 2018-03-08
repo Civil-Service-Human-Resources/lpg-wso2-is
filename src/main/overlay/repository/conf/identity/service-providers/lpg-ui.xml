@@ -90,6 +90,15 @@
                 </RemoteClaim>
                 <RequestClaim>true</RequestClaim>
             </ClaimMapping>
+            <ClaimMapping>
+                <LocalClaim>
+                    <ClaimUri>http://wso2.org/claims/role</ClaimUri>
+                </LocalClaim>
+                <RemoteClaim>
+                    <ClaimUri>http://wso2.org/claims/role</ClaimUri>
+                </RemoteClaim>
+                <RequestClaim>true</RequestClaim>
+            </ClaimMapping>
         </ClaimMappings>
     </ClaimConfig>
     <PermissionAndRoleConfig></PermissionAndRoleConfig>
