@@ -11,3 +11,4 @@ run wso2is -f /scripts/postgres-bpel.sql
 run wso2is -f /scripts/postgres-identity.sql
 run wso2is -f /scripts/postgres-metrics.sql
 run wso2is -f /scripts/add-users.sql
+run wso2is -f /scripts/add-roles.sql
