@@ -639,7 +639,7 @@
     <StatisticsReporterDisabled>true</StatisticsReporterDisabled>
 
     <!-- Enable accessing Admin Console via HTTP -->
-    <!-- EnableHTTPAdminConsole>true</EnableHTTPAdminConsole -->
+    <EnableHTTPAdminConsole>true</EnableHTTPAdminConsole>
 
     <!--
        Default Feature Repository of WSO2 Carbon.
