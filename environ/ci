@@ -1,10 +1,11 @@
 #! /usr/bin/env bash
 
+echo "Building lpg-wso2-is:${TRAVIS_COMMIT}"
+
+./gradlew build
 docker build -t cshr/lpg-wso2-is:$TRAVIS_COMMIT .
 docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-docker push cshr/lpg-wso2-is
-
-echo ${TRAVIS_COMMIT}
+docker push cshr/lpg-wso2-is:$TRAVIS_COMMIT
 
 export PATH="`pwd`/pyhome/bin:${PATH}"
 export PYTHONPATH="`pwd`/pyhome/lib/python/site-packages:${PYTHONPATH}"
@@ -16,6 +17,3 @@ if [ $? -ne 0 ]; then
 fi
 
 ./environ/deploy dev ${TRAVIS_COMMIT}
-
-# cd test/headless
-# npm install
