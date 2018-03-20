@@ -20,14 +20,8 @@
 
     <Service className="org.wso2.carbon.tomcat.ext.service.ExtendedStandardService" name="Catalina">
 
-        <!--
-        optional attributes:
-
-        proxyPort="80"
-        -->
         <Connector protocol="org.apache.coyote.http11.Http11NioProtocol"
-                   port="9763"
-                   redirectPort="9443"
+                   port="8080"
                    bindOnInit="false"
                    maxHttpHeaderSize="8192"
                    acceptorThreadCount="2"
@@ -44,12 +38,6 @@
                    compressableMimeType="text/html,text/javascript,application/x-javascript,application/javascript,application/xml,text/css,application/xslt+xml,text/xsl,image/gif,image/jpg,image/jpeg"
                    URIEncoding="UTF-8"/>
 
-        <!--
-        optional attributes:
-
-        proxyPort="443"
-        Added sslEnabledProtocols="TLSv1,TLSv1.1,TLSv1.2" for poodle vulnerability fix
-        -->
         <Connector protocol="org.apache.coyote.http11.Http11NioProtocol"
                    port="9443"
                    bindOnInit="false"
@@ -77,23 +65,16 @@
                    keystorePass="wso2carbon"
                    URIEncoding="UTF-8"/>
 
-
         <Engine name="Catalina" defaultHost="localhost">
-
-            <!--Realm className="org.apache.catalina.realm.MemoryRealm" pathname="${carbon.home}/repository/conf/tomcat/tomcat-users.xml"/-->
-
             <Realm className="org.wso2.carbon.tomcat.ext.realms.CarbonTomcatRealm"/>
-
             <Host name="localhost" unpackWARs="true" deployOnStartup="false" autoDeploy="false"
                   appBase="${carbon.home}/repository/deployment/server/webapps/">
-
                 <Valve className="org.wso2.carbon.tomcat.ext.valves.CarbonContextCreatorValve"/>
                 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="${carbon.home}/repository/logs"
                        prefix="http_access_" suffix=".log"
                        pattern="combined"/>
                 <Valve className="org.wso2.carbon.tomcat.ext.valves.CarbonStuckThreadDetectionValve" threshold="600"/>
                 <Valve className="org.wso2.carbon.tomcat.ext.valves.CompositeValve"/>
-
                 <!-- Authentication and Authorization valve for the rest apis and we can configure context for this in identity.xml  -->
                 <Valve className="org.wso2.carbon.identity.auth.valve.AuthenticationValve"/>
                 <Valve className="org.wso2.carbon.identity.authz.valve.AuthorizationValve"/>
@@ -102,4 +83,3 @@
         </Engine>
     </Service>
 </Server>
-

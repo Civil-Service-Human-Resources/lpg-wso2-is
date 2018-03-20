@@ -1,5 +1,7 @@
----
 sudo: required
+dist: trusty
+
+language: java
 
 services:
   - docker
@@ -10,10 +12,3 @@ cache:
 
 install: true
 script: ./environ/ci
-
-addons:
-  ssh_known_hosts:
-  - dev-lpg.uksouth.cloudapp.azure.com
-  - 10.0.10.4
-  - 10.0.11.4
-  - 10.0.12.4

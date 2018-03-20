@@ -11,8 +11,8 @@ pushd $(dirname $0)/..
 
 ./gradlew build
 
-docker build -t cshr/wso2-is .
-docker run -d --rm --name wso2 --net="wso2is_default" -p 9443:9443 cshr/wso2-is
+docker build -t cshr/lpg-wso2-is .
+docker run -d --rm --name wso2 --net="wso2is_default" -p 8080:8080 -p 9443:9443 cshr/lpg-wso2-is
 
 popd
 
