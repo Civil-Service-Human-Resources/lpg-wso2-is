@@ -24,6 +24,6 @@ ENV CARBON_HOST=identity.local.cshr.digital \
     LPG_MANAGEMENT_UI_URL=http://lpg.local.cshr.digital:3003 \
     LPG_UI_URL=http://lpg.local.cshr.digital:3001
 
-EXPOSE 8000 8080 9443 9763 10500
+EXPOSE 8080 9443
 
 ENTRYPOINT ["bin/wso2server.sh"]
