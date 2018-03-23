@@ -29,4 +29,4 @@ ENV CARBON_HOST=identity.local.cshr.digital \
 
 EXPOSE 8080 9443
 
-ENTRYPOINT ["bin/wso2server.sh"]
+CMD ["bin/wso2server.sh"]
