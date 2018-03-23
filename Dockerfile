@@ -13,6 +13,9 @@ RUN wget -q -P /opt https://github.com/wso2/product-is/releases/download/v${IS_V
 
 RUN wget -q -P ./repository/components/lib https://jdbc.postgresql.org/download/postgresql-42.1.4.jar
 
+ADD https://github.com/Civil-Service-Human-Resources/lpg-terraform-paas/releases/download/hammer-0.1/hammer /bin/hammer
+RUN chmod +x /bin/hammer && echo "Hammer v0.1 Added"
+
 COPY src/main/overlay .
 
 ENV CARBON_HOST=identity.local.cshr.digital \
