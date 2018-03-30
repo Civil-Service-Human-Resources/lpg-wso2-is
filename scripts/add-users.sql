@@ -1,6 +1,5 @@
-
 INSERT INTO um_user (um_user_name, um_user_password, um_salt_value, um_require_change, um_changed_time, um_tenant_id)
-  VALUES ('test@lpg.dev.cshr.digital', 'CpfcMRB1+ErcVc4On0/58md9xOC6cxMl/WOg71v5TA4=', 'tApkvY3NRkg2EMmxO50kLA==', 'f', '2018-01-18 15:36:19.407', -1234);
+  VALUES ('test@lpg.dev.cshr.digital', 'eql0slxtjuJ0+vGDsNLJZgPUWBGl6GCgW4krqwqnIQs=', 'GO4oZAOaZVMRdPkBV8j4wA==', 'f', '2018-01-18 15:36:19.407', -1234);
 
 INSERT INTO um_user_attribute (um_attr_name, um_attr_value, um_profile_id, um_user_id, um_tenant_id) SELECT 'uid', 'test@lpg.dev.cshr.digital', 'default', um_id, -1234 FROM um_user where um_user_name = 'test@lpg.dev.cshr.digital';
 INSERT INTO um_user_attribute (um_attr_name, um_attr_value, um_profile_id, um_user_id, um_tenant_id) SELECT 'scimId', 'f6bb29cb-876f-45fa-b851-34f6569d35d2', 'default', um_id, -1234 FROM um_user where um_user_name = 'test@lpg.dev.cshr.digital';

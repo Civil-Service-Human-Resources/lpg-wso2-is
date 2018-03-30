@@ -1,0 +1,16 @@
+<outputEventAdaptersConfig>
+    <adapterConfig type="email">
+        <property key="mail.smtp.from">accounts@cshr.digital</property>
+        <property key="mail.smtp.user">e64dec6e22052853e7e488ac09a6c241</property>
+        <property key="mail.smtp.password">af0bcbdd6397b00a7f8e13e0652cbd61</property>
+        <property key="mail.smtp.host">in-v3.mailjet.com</property>
+        <property key="mail.smtp.port">587</property>
+        <property key="mail.smtp.starttls.enable">true</property>
+        <property key="mail.smtp.auth">true</property>
+        <!-- Thread Pool Related Properties -->
+        <property key="minThread">8</property>
+        <property key="maxThread">100</property>
+        <property key="keepAliveTimeInMillis">20000</property>
+        <property key="jobQueueSize">10000</property>
+    </adapterConfig>
+</outputEventAdaptersConfig>
