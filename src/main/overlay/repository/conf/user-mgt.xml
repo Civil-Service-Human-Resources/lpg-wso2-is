@@ -1,4 +1,3 @@
-
 <UserManager>
     <Realm>
         <Configuration>
@@ -6,14 +5,14 @@
             <AdminRole>admin</AdminRole>
             <AdminUser>
                 <UserName>admin@cslearning.gov.uk</UserName>
-                <Password>admin</Password>
+                <Password>changeme!12</Password>
             </AdminUser>
-            <EveryOneRoleName>everyone</EveryOneRoleName> <!-- By default users in this role sees the registry root -->
+            <EveryOneRoleName>everyone</EveryOneRoleName>
+            <!-- By default users in this role sees the registry root -->
             <Property name="isCascadeDeleteEnabled">true</Property>
             <Property name="initializeNewClaimManager">true</Property>
             <Property name="dataSource">jdbc/WSO2CarbonDB</Property>
         </Configuration>
-
         <!-- Following is the configuration for internal JDBC user store. This user store manager is based on JDBC.
              In case if application needs to manage passwords externally set property
              <Property name="PasswordsExternallyManaged">true</Property>.
@@ -30,9 +29,9 @@
             <Property name="WriteGroups">true</Property>
             <Property name="UsernameJavaRegEx">^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$</Property>
             <Property name="UsernameJavaRegExViolationErrorMsg">Username pattern policy violated</Property>
-            <Property name="PasswordJavaRegEx">^[\S]{5,30}$</Property>
-            <Property name="PasswordJavaScriptRegEx">^[\S]{5,30}$</Property>
-            <Property name="PasswordJavaRegExViolationErrorMsg">Password length should be within 5 to 30 characters</Property>
+            <Property name="PasswordJavaRegEx">(?!([a-zA-Z]*|[a-z\d]*|[^A-Z\d]*|[A-Z\d]*|[^a-z\d]*|[^a-zA-Z]*)$).{8,}</Property>
+            <Property name="PasswordJavaScriptRegEx">(?!([a-zA-Z]*|[a-z\d]*|[^A-Z\d]*|[A-Z\d]*|[^a-z\d]*|[^a-zA-Z]*)$).{8,}</Property>
+            <Property name="PasswordJavaRegExViolationErrorMsg">Password should be at least 8 characters long and contain at least one from 3 of the following groups: upper case, lower case, number, symbol (e.g. 6 lower case, 1 number, 1 symbol).</Property>
             <Property name="RolenameJavaRegEx">^[\S]{3,30}$</Property>
             <Property name="RolenameJavaScriptRegEx">^[\S]{3,30}$</Property>
             <Property name="CaseInsensitiveUsername">false</Property>
@@ -48,7 +47,6 @@
             <Property name="UserNameAttribute">mail</Property>
             <Property name="UsernameJavaScriptRegEx">^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$</Property>
         </UserStoreManager>
-
         <AuthorizationManager class="org.wso2.carbon.user.core.authorization.JDBCAuthorizationManager">
             <Property name="AdminRoleManagementPermissions">/permission</Property>
             <Property name="AuthorizationCacheEnabled">true</Property>
@@ -56,7 +54,6 @@
         </AuthorizationManager>
     </Realm>
 </UserManager>
-
 <!--
 
 ************* Description of some of the configuration properties used in user-mgt.xml *********************************
