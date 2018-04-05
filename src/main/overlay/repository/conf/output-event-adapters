@@ -1,8 +1,8 @@
 <outputEventAdaptersConfig>
     <adapterConfig type="email">
         <property key="mail.smtp.from">accounts@cshr.digital</property>
-        <property key="mail.smtp.user"></property>
-        <property key="mail.smtp.password"></property>
+        <property key="mail.smtp.user">$mailSmtpUser</property>
+        <property key="mail.smtp.password">$mailSmtpPassword</property>
         <property key="mail.smtp.host">in-v3.mailjet.com</property>
         <property key="mail.smtp.port">587</property>
         <property key="mail.smtp.starttls.enable">true</property>

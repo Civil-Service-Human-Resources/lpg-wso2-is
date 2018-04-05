@@ -33,6 +33,8 @@
 # OS specific support.  $var _must_ be set to either true or false.
 #ulimit -n 100000
 
+envsubst < repository/conf/output-event-adapters > repository/conf/output-event-adapters.xml
+
 cygwin=false;
 darwin=false;
 os400=false;
@@ -278,6 +280,8 @@ echo "Using Java memory options: $JVM_MEM_OPTS"
 
 #To monitor a Carbon server in remote JMX mode on linux host machines, set the below system property.
 #   -Djava.rmi.server.hostname="your.IP.goes.here"
+
+
 
 while [ "$status" = "$START_EXIT_STATUS" ]
 do
