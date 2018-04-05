@@ -37,61 +37,86 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WSO2 Identity Server</title>
+        <title>Create a pas
+    sword - Learning Platform for Government</title>
 
         <link rel="icon" href="images/favicon.png" type="image/x-icon"/>
-        <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/Roboto.css" rel="stylesheet">
-        <link href="css/custom-common.css" rel="stylesheet">
+        <link href="css/custom-common.css" rel="stylesheet"> -->
 
-        <!--[if lt IE 9]>
-        <script src="js/html5shiv.min.js"></script>
-        <script src="js/respond.min.js"></script>
-        <![endif]-->
+        <!--[if lt IE 9]>-->
+        <!-- <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script> -->
+        <!-- <![endif]-->
+
+        <link href="css/styles.css" rel="stylesheet">
+
     </head>
 
     <body>
 
-    <!-- header -->
-    <header class="header header-default">
-        <div class="container-fluid"><br></div>
-        <div class="container-fluid">
-            <div class="pull-left brand float-remove-xs text-center-xs">
-                <a href="#">
-                    <img src="images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
+    <!-- cookie-message -->
+    <!-- <div id="global-cookie-message">
+        <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+    </div> -->
+    <!-- /cookie-message -->
 
-                    <h1><em>Identity Server</em></h1>
-                </a>
+    <header class="with-proposition" id="global-header">
+        <div class="header-wrapper">
+            <div class="header-global">
+                <div class="header-logo">
+                    <a class="content" href="/" id="logo">Learning Platform for Government</a>
+                </div>
             </div>
         </div>
-    </header>
+    </header><!-- header-bar -->
+    <div id="global-header-bar"></div><!-- /header-bar -->
+    <main id="content">
+        <!-- phase-banner -->
+        <div class="phase-banner">
+            <p><strong class="phase-tag">BETA</strong> <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span></p>
+        </div><!-- /phase-banner -->
 
-    <!-- page content -->
-    <div class="container-fluid body-wrapper">
 
-        <div class="row">
-            <!-- content -->
-            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-5 col-centered wr-login">
-                <h2 class="wr-title uppercase blue-bg padding-double white boarder-bottom-blue margin-none">Reset
-                    Password
-                </h2>
+        <div class="main-content">
+            <div class="container">
 
-                <div class="clearfix"></div>
-                <div class="boarder-all ">
+                <div class="grid-row">
+                    <div class="column-two-thirds">
 
-                    <% if (error) { %>
-                    <div class="alert alert-danger" id="server-error-msg">
-                        <%= Encode.forHtmlContent(errorMsg) %>
+                        <h1 class="heading-xlarge heading heading--page-heading"><span class="heading-secondary">Learning Platform for Government</span> Create a password</h1>
+                        <% if (error) { %>
+                            <div class="alert alert-danger" id="server-error-msg">
+                                <%= Encode.forHtmlContent(errorMsg) %>
+                            </div>
+                        <% } %>
+
                     </div>
-                    <% } %>
-                    <div class="alert alert-danger" id="error-msg" hidden="hidden"></div>
+                </div>
 
-                    <div class="padding-double">
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+
+                        <p class="lede">Create a password to complete your registration on the Civil Service Learning Platform.</p>
+
+                        <div class="u-space-b30">
+                            <p>Your password must have:</p>
+                            <ul class="list-bullet criteria__list">
+                                <li>8 or more characters</li>
+                                <li>at least 1 number or symbol</li>
+                                <li>upper and lower case letters</li>
+                            </ul>
+                        </div>
+
                         <form method="post" action="completepasswordreset.do" id="passwordResetForm">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group required">
-                                <label class="control-label">Enter New Password</label>
-                                <input id="reset-password" name="reset-password" type="password"
-                                       class="form-control" required="">
+
+
+                            <div class="alert alert-danger" id="error-msg" hidden="hidden"></div>
+
+                            <div class="form-group required">
+                                <label class="form-label" for="reset-password">Create a password</label>
+                                <input class="form-control" id="reset-password" type="password" name="reset-password" value="" required="">
                             </div>
 
                             <%
@@ -100,49 +125,61 @@
                             <div>
                                 <input type="hidden" name="callback" value="<%=callback %>"/>
                             </div>
-                            <%
-                                }
-                            %>
-                            <%
-                                if (tenantDomain != null) {
-                            %>
+                            <% } %>
+                            <% if (tenantDomain != null) { %>
                             <div>
                                 <input type="hidden" name="tenantdomain" value="<%=tenantDomain %>"/>
                             </div>
-                            <%
-                                }
-                            %>
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group required">
-                                <label class="control-label">Confirm Password</label>
-                                <input id="reset-password2" name="reset-password2" type="password" class="form-control"
-                                       data-match="reset-password" required="">
+                            <% } %>
+
+
+                            <div class="form-group required">
+                                <label class="form-label  " for="reset-password2">Retype your password</label>
+                                <input class="form-control" id="reset-password2" type="password" name="reset-password2" value="" data-match="reset-password" required="">
                             </div>
 
-                            <div class="form-actions">
-                                <button id="submit"
-                                        class="wr-btn grey-bg col-xs-12 col-md-12 col-lg-12 uppercase font-extra-large"
-                                        type="submit">Submit
-                                </button>
+
+                            <div class="form-group">
+                                <%--<input class="button" id="submit" type="submit" value="Continue">--%>
+                                <button id="submit" class="button" type="submit">Continue</button>
                             </div>
-                            <div class="clearfix"></div>
+
+
                         </form>
+
                     </div>
                 </div>
             </div>
-            <!-- /content/body -->
-
         </div>
-    </div>
 
-    <!-- footer -->
-    <footer class="footer">
-        <div class="container-fluid">
-            <p>WSO2 Identity Server | &copy;
-                <script>document.write(new Date().getFullYear());</script>
-                <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>. All Rights Reserved.
-            </p>
+    </main>
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+        <div class="footer-wrapper">
+            <%--<div class="footer-meta">--%>
+                <%--<div class="footer-meta-inner">--%>
+                    <%--<div class="open-government-licence">--%>
+                        <%--<p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>--%>
+                        <%--<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a> , except where otherwise stated</p>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="copyright">--%>
+                    <%--<a href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+    <br><br><br><br><br><br>
         </div>
     </footer>
+
+
+
+
+
+
+
+    <!-- OLD STUFF BELOW -->
+
+
 
     <script src="libs/jquery_1.11.3/jquery-1.11.3.js"></script>
     <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>

@@ -3,5 +3,7 @@
 .gradle
 build
 out
-
+.classpath
+.project
+.settings
 wso2is-5.4.0-update3
