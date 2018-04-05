@@ -25,7 +25,9 @@ ENV CARBON_HOST=identity.local.cshr.digital \
     DATABASE_URL=jdbc:postgresql://postgres:5432/wso2is \
     DATABASE_USER=user \
     LPG_MANAGEMENT_UI_URL=http://lpg.local.cshr.digital:3003 \
-    LPG_UI_URL=http://lpg.local.cshr.digital:3001
+    LPG_UI_URL=http://lpg.local.cshr.digital:3001 \
+    SMTP_USER=user \
+    SMTP_PASSWORD=password
 
 EXPOSE 8080 9443
 
