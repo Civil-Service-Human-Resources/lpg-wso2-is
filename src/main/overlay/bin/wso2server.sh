@@ -37,6 +37,9 @@
 sed -i 's/$SMTP_USER/'"$SMTP_USER"'/' repository/conf/output-event-adapters.xml
 sed -i 's/$SMTP_PASSWORD/'"$SMTP_PASSWORD"'/' repository/conf/output-event-adapters.xml
 
+sed -i 's/$ADMIN_USER/'"$ADMIN_USER"'/' repository/conf/user-mgt.xml
+sed -i 's/$ADMIN_PASSWORD/'"$ADMIN_PASSWORD"'/' repository/conf/user-mgt.xml
+
 cygwin=false;
 darwin=false;
 os400=false;

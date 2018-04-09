@@ -27,8 +27,9 @@ ENV CARBON_HOST=identity.local.cshr.digital \
     LPG_MANAGEMENT_UI_URL=http://lpg.local.cshr.digital:3003 \
     LPG_UI_URL=http://lpg.local.cshr.digital:3001 \
     SMTP_USER=user \
-    SMTP_PASSWORD=password
-
+    SMTP_PASSWORD=password \
+    ADMIN_USER=admin@cslearning.gov.uk \
+    ADMIN_PASSWORD=changeme!12
 EXPOSE 8080 9443
 
 CMD ["bin/wso2server.sh"]
