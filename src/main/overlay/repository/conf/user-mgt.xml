@@ -4,7 +4,7 @@
             <AddAdmin>true</AddAdmin>
             <AdminRole>admin</AdminRole>
             <AdminUser>
-                <UserName>$ADMIN_USERNAME</UserName>
+                <UserName>$ADMIN_USER</UserName>
                 <Password>$ADMIN_PASSWORD</Password>
             </AdminUser>
             <EveryOneRoleName>everyone</EveryOneRoleName>

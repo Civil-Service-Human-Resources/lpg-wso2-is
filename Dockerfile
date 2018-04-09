@@ -30,6 +30,7 @@ ENV CARBON_HOST=identity.local.cshr.digital \
     SMTP_PASSWORD=password \
     ADMIN_USER=admin@cslearning.gov.uk \
     ADMIN_PASSWORD=changeme!12
+
 EXPOSE 8080 9443
 
 CMD ["bin/wso2server.sh"]
