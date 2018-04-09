@@ -4,8 +4,8 @@
             <AddAdmin>true</AddAdmin>
             <AdminRole>admin</AdminRole>
             <AdminUser>
-                <UserName>admin@cslearning.gov.uk</UserName>
-                <Password>changeme!12</Password>
+                <UserName>$ADMIN_USER</UserName>
+                <Password>$ADMIN_PASSWORD</Password>
             </AdminUser>
             <EveryOneRoleName>everyone</EveryOneRoleName>
             <!-- By default users in this role sees the registry root -->

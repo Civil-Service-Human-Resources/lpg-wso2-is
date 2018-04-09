@@ -33,9 +33,12 @@
 # OS specific support.  $var _must_ be set to either true or false.
 #ulimit -n 100000
 
-# Inject credentials for email securely. We need to follow same approach for admin password
+# Inject credentials for email and admin login securely
 sed -i 's/$SMTP_USER/'"$SMTP_USER"'/' repository/conf/output-event-adapters.xml
 sed -i 's/$SMTP_PASSWORD/'"$SMTP_PASSWORD"'/' repository/conf/output-event-adapters.xml
+
+sed -i 's/$ADMIN_USER/'"$ADMIN_USER"'/' repository/conf/user-mgt.xml
+sed -i 's/$ADMIN_PASSWORD/'"$ADMIN_PASSWORD"'/' repository/conf/user-mgt.xml
 
 cygwin=false;
 darwin=false;
